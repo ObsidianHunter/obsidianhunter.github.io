@@ -8,7 +8,11 @@ permalink: /reconstruccion-ataque-completo/
 
 Hoy, voy a reconstruir la kill chain de un ataque llevado a cabo mayoritariamente por tácticas living off the lands. Voy a reconstruir todo el ataque identificando los puntos claves del ataque. Para ello, he simulado nuevamente un entorno de trabajo de oficina normal. He ordenado con el parámetro "sort" los registros de splunk, lo que me permite ir recorriendo el informe desde el principio hasta el final. Vemos que los primeros procesos parecen benignos y no hay nada malo en ello (parecen tareas típicas de oficina).
 
-Empecemos por el principio, por dónde ha entrado el atacante. Si nos fijamos, el usuario ha ejecutado un programa en temp (Ya eso debería ser tremendamente sospechoso por sí solo) y parece un documento de Word benigno... Bueno, para sorpresa de nadie, no lo es. La extensión es un docm, es decir, su arquitectura permite macros (Y las macros han sido si siempre uno de los vectores de ataque más usados). Por lo tanto, el atacante se coló mediante un phishing y con una macro.
+Empecemos por el principio, por dónde ha entrado el atacante. Si nos fijamos, el usuario ha ejecutado un programa en temp (Ya eso debería ser tremendamente sospechoso por sí solo) y parece un documento de Word benigno... Bueno, para sorpresa de nadie, no lo es. La extensión es un docm, es decir, su arquitectura permite macros (Y las macros han sido si siempre uno de los vectores de ataque más usados). Por lo tanto, el atacante se coló mediante un phishing y con una macro. Podemos decir entonces que:
+
+- La táctica que ha usado es Phishing (TA0001) que corresponde a Initial Access. 
+- Además, si el usuario ejecutó sin saberlo una macro maliciosa, podemos también concluir que ha usado la técnica T1204, o sea, user Execution.
+
 
 ![Imagen1Forense](https://github.com/user-attachments/assets/2a054693-c680-496f-b904-c3f849f7fe94)
 
@@ -17,6 +21,9 @@ Esa macro contiene un comando en powershell, ofuscado en base 64, como se puede 
 ![Imagen2Forense](https://github.com/user-attachments/assets/a396dee4-c66c-4480-821c-1b243f2ae6a0)
 
 Esto apunta a una dirección para bajar un script, la ip: 192.168.200.88, con un script en ps1 llamado update. 
+
+- La táctica usada aquí es Execution (TA0002) con la técnica T1059 (Command and Scripting Interpreter).
+- También se ha usado la Táctica Defense Evasion (TA0005) con la técnica T1140 (Deobfuscate/Decode Files or Information)
 
 7 segundos después, aparece en el ordenador un archivo llamado update.dll en la ruta de programa C:\ProgramData\Microsoft\Windows\Caches\update.dll (muy probablemente lo ha bajado el script anterior) y el atacante está usando rundll.exe para poder mandar órdenes al ordenador a través de esa dll. Recordemos que rundll.exe es un programa de Windows, es tremendamente silencioso a ojos de los IDS, el atacante está usando rundll.exe para ejecutar comandos en el sistema a través de su dll infectada, la dll está sirviendo como puente para el command and control. A partir de ahora, el atacante puede mandarle las órdenes a esa dll para que las ejecute, permitiendo el control total del sistema. Lo primero que va a hacer esa la enumeración tanto del propio ordenador, como los dominios y la red. 
 
@@ -31,6 +38,12 @@ Esto apunta a una dirección para bajar un script, la ip: 192.168.200.88, con un
 - Con net group "Domain Admins" /domain está viendo quiénes son los administradores de la red.
 
 - nltest.exe /domain_trusts aquí está mirando los dominios de la red, viendo si hay más conectados a los que poder saltar.
+
+Aquí podemos concluir varias tácticas y técnicas:
+
+- Táctica usada Command and Control (TA0011)
+- Táctica Defense Evasion (TA0005) con la técnica T1218.011  (System Binary Proxy Execution: Rundll32)
+- Táctica usada Discovery (TA0007) con las técnicas T1033 (System Owner/User Discovery), T1069 (Permission Groups Discovery) y T1482 (Domain Trust Discovery).
 
 Antes de descargar el programa que filtra todas las credenciales, lo cual podría activar el antivirus o el IDS, quiere asegurarse de que ha entrado por una razón y puede llevarse algo de información.
 
