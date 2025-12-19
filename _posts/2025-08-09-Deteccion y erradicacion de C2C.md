@@ -75,5 +75,5 @@ En un SOC, de las cosas más comunes es el <span class="solo-color-neon">ticketi
 - Acciones de erradicación: <span class="solo-color-neon">Verificación de la conexión con lsof, erradicación del proceso y el archivo.</span>
 - Conclusión: <span class="solo-color-neon">Incidente cerrado tras verificar que no existen más conexiones persistentes hacia la IP atacante.</span>
 
-<span class="solo-color-neon">Laboratorio Creado: 09-08-2025</span>
-<span class="solo-color-neon">Laboratorio Subido: 19-12-2025</span>
+- <span class="solo-color-neon">Laboratorio Creado: 09-08-2025</span>
+- <span class="solo-color-neon">Laboratorio Subido: 19-12-2025</span>
