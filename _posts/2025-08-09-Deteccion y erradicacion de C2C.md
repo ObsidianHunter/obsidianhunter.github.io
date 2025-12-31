@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Detección, Contención, Erradicación y Ticketing Soc de un Command and Control [Zeek + Wireshark]"
-date: 2025-12-19
+date: 2025-08-09
 categories: [blue-team]
 permalink: /deteccion-c2c/
 ---
