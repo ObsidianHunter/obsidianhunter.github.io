@@ -29,8 +29,8 @@ Con un IDS normalito debería ser suficiente para detectarlo (debería). Esto ta
 ![Wireshark](https://github.com/user-attachments/assets/47bdb189-6d1b-4257-b376-cb8d65eea15b)
 
 
--Windows -> <span class="solo-color-neon">netsh interface ipv4 add neighbors "Ethernet2" 192.168.0.191 LAMACDELINUX </span>
--Linux -> <span class="solo-color-neon">ip neighbor add 192.168.0.19 lladdr LAMACDEWINDOWS dev eth0 nud permanent </span>
+- Windows -> <span class="solo-color-neon">netsh interface ipv4 add neighbors "Ethernet2" 192.168.0.191 LAMACDELINUX </span>
+- Linux -> <span class="solo-color-neon">ip neighbor add 192.168.0.19 lladdr LAMACDEWINDOWS dev eth0 nud permanent </span>
 
 Normalmente un ataque ARP poisoning envenena la puerta de enlace, para leer todo lo que vaya a salir a internet... En mi caso, preferí envenenar ambas tablas para controlar la conversación porque puede haber información buena de FTP, telnet o demás (aunque son protocolos inseguros que no deberían usarse nunca). Incluso podría usar el protocolo HTTPS (que va cifrado) pero el atacante podría hacer un <span class="solo-color-neon">SSL Stripping</span>, lo que obligaría al usuario a pasar de HTTPS a HTTP (que va sin cifrar). Para evitar esto está <span class="solo-color-neon">el protocolo HSTS</span> en el navegador, que para resumir, si alguien intenta derivar tu petición de HTTPS a HTTP, ignora esa orden.
 
