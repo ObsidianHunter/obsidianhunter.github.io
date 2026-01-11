@@ -1,0 +1,13 @@
+---
+layout: home
+title: Categorías
+---
+<h1>Categorías</h1>
+<ul>
+  {% assign cats = site.categories %}
+  {% for cat in cats %}
+    <li>
+      <a href="/categories/{{ cat[0] }}/">{{ cat[0] }} ({{ cat[1].size }})</a>
+    </li>
+  {% endfor %}
+</ul>

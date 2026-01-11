@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>{{ page.title }} | {{ site.title }}</title>
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+</head>
+<body>
+  <header style="text-align: center; margin-top: 20px;">
+    <h1><a href="{{ '/' | relative_url }}">Ingeniería Defensiva y SecOps</a></h1>
+  </header>
+
+  <article style="max-width: 800px; margin: 0 auto 40px auto; padding: 20px; box-sizing: border-box;">
+    <div class="author-box" style="text-align: center; margin-bottom: 20px;">
+      <img src="{{ site.author.avatar }}" alt="Foto de perfil" style="border-radius: 50%; width: 100px; height: auto; display: block; margin: 0 auto 10px;">
+      <strong>by {{ site.author.name }}</strong><br>
+      <a href="{{ site.author.instagram }}">Instagram</a> |
+      <a href="{{ site.author.x }}">X</a> |
+      <a href="{{ site.author.github }}">GitHub</a> |
+      <a href="{{ site.author.alienvault }}">AlienVault</a>
+    </div>
+
+    <main style="padding-left: 10px; text-align: justify;">
+      <h1>{{ page.title }}</h1>
+      <p>Posts de la categoría <strong>{{ page.category }}</strong>:</p>
+
+      <ul>
+        {% assign posts = site.categories[page.category] %}
+        {% for post in posts %}
+          <li>
+            <a href="{{ post.url | relative_url }}">{{ post.title }}</a> — <small>{{ post.date | date: "%d %b %Y" }}</small>
+          </li>
+        {% endfor %}
+      </ul>
+
+      <p><a href="{{ '/' | relative_url }}">Volver a inicio</a></p>
+    </main>
+  </article>
+
+  <footer style="text-align: center; margin-top: 40px;">
+    <p>&copy; {{ site.time | date: "%Y" }} {{ site.title }}</p>
+  </footer>
+</body>
+</html>
