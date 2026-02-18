@@ -20,11 +20,11 @@ Como analista, quedarte con un sólo log sería como ver la mitad de un cuadro, 
 
 - <span class="solo-color-neon">tcp.flags.syn==1 && tcp.flags.ack==1</span> : En este caso, voy a ver qué puertos han mandado un paquete <span class="solo-color-neon">SYN + ACK </span> al ordenador del atacante. Recuerda el saludo a tres vías, <span class="solo-color-neon">SYN -> SYN + ACK -> ACK</span>. En este caso, la máquina víctima ha respondido (es muy sociable) con que tiene abiertos los puertos <span class="solo-color-neon">22, 80</span> (Puertos bien conocidos) y <span class="solo-color-neon">3306</span> (puerto registrado), puertos super típicos que seguramente estén en todos los ordenadores. El atacante ya sabe que el servicio <span class="solo-color-neon">ssh, http y MySQL</span> está corriendo en el sistema.
 
-- ![puertos abiertos wireshark](https://github.com/user-attachments/assets/e054143d-8843-484e-af14-d6438b8bd046)
+![puertos abiertos wireshark](https://github.com/user-attachments/assets/e054143d-8843-484e-af14-d6438b8bd046)
 
 - <span class="solo-color-neon">tcp.flags.reset==1</span> : Aquí voy a ver qué puertos estaban cerradas en el momento del escaneo. Incluso si todo estuviera cerrado, un paquete <span class="solo-color-neon">RST</span> da mucha información, como por ejemplo, que el host está encendido.
 
-- ![Wireshark puertos cerrados](https://github.com/user-attachments/assets/634bbd2d-33e1-4c10-bd04-f6d99c35f931)
+![Wireshark puertos cerrados](https://github.com/user-attachments/assets/634bbd2d-33e1-4c10-bd04-f6d99c35f931)
 
 Ya tenemos 2 logs confirmando que estamos sufriendo un escaneo de puertos. Con <span class="solo-color-neon">ELK</span>, en la sección messages, busqué la ip del atacante y me encontré esto:
 
