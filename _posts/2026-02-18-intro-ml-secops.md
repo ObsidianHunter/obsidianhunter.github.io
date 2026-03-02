@@ -45,7 +45,7 @@ Boom, <span class="solo-color-neon">acabamos de romper el modelo</span>. El mode
 
 ![Iteraccion4](https://github.com/user-attachments/assets/cd6a4d07-5ee5-4a22-b8b1-e1970a9d448d)
 
-Un 94% de que es una web legítima. Es decir, podrías tener un cartelito en la web que pusiera en letras grandes y fluorescentes que te van a meter el malware de su vida que el modelo seguiría pensando que estás a salvo. En este caso, fíjate en la web... No es de PayPal, repito (para mí es una web muy buena para comprar online, por la seguridad que ofrece por la ocultación de tus datos bancarios), no está en su subdominio, no es security.paypal.com, es paypal-security.com, es una web completa, no un subdominio. 
+Un 94% de que es una web legítima. Es decir, podrías tener un cartelito en la web que pusiera en letras grandes y fluorescentes que te van a meter el malware de su vida que el modelo seguiría pensando que estás a salvo. En este caso, fíjate en la web... No es de PayPal, repito (para mí es una web muy buena para comprar online, por la seguridad que ofrece por la ocultación de tus datos bancarios), no está en su subdominio, no es security[.]paypal[.]com, es paypal-security[.]com, es una web completa, no un subdominio. 
 
 Bien, ahora voy a hacer un adversarial training, es decir, voy a pasarle los parámetros de esa web al modelo para que se reajuste y ahora considere que puede haber phishing con una web url corta, con https, con menos puntos y con menos palabras clave:
 
