@@ -41,9 +41,9 @@ Creé una carpeta llamada dumpeo para volcarlo. Y ahora voy a analizar las caden
 
 Pregunta 7: ¿Cuál es la ruta completa del ejecutable malicioso? En este caso, es bastante fácil, porque con hacer el comando <span class="solo-color-neon">Windows.pstree</span> me va a salir la ruta completa del archivo: <span class="solo-color-neon">C:\Users\Tammam\AppData\Local\Temp\c3912af058\oneetx.exe</span> es sospechoso (ojo, hay algunos legítimos, como instaladores o archivos temporales) pero si además llama a <span class="solo-color-neon">rundll32</span> y se conecta a internet, es una bandera roja muy grande. Yo siempre suelo decirlo en otros posts, pero te lo vuelvo a decir: Para mí una ruta anormal + salida a internet + Persistencia = <span class="solo-color-neon">Archivo que hay que mirar detenidamente</span> (y no sólo con<span class="solo-color-neon"> virustotal</span>, la entropía, firma digital, fecha de creación, nombre original...)
 
-Con esto termino el lab, la verdad es que todo lo que tiene que ver con Volatility es muy entretenido y útil.
-
 ![Pregunta7](https://github.com/user-attachments/assets/357f88eb-b753-47f9-9f5d-029809cd2ebc)
+
+Con esto termino el lab, la verdad es que todo lo que tiene que ver con Volatility es muy entretenido y útil.
 
 - Laboratorio creado: <span class="solo-color-neon">14/02/2026</span>
 
