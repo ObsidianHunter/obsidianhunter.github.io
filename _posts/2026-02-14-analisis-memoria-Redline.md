@@ -40,7 +40,7 @@ Hoy, os traigo un nuevo laboratorio de [CyberDefenders](https://cyberdefenders.o
 
 - <span class="solo-color-neon">Pregunta 6:</span> ¿Cuál es la URL completa del archivo PHP que visitó el atacante? Para conocer esto, primero necesito descargar en mi ordenador todo lo que tenía la memoria del bicho. Para ello hago un <span class="solo-color-neon">python3 vol.py -f RedLine.mem -o dumpeo windows.memmap --pid 5896 --dump </span>
 
-Creé una carpeta llamada dumpeo para volcarlo. Y ahora voy a analizar las cadenas que hay dentro. Uso el comandos <span class="solo-color-neon">strings</span> para analizar la memoria y busco las que contenga php. Van a salir unas cuantas, pero yo me enfoco en las que tengan la ip del atacante. Aquí descubrimos la respuesta: <span class="solo-color-neon">hxxp://77[.]91[.]124[.]20/store/games/index[.]php</span>
+Creé una carpeta llamada dumpeo para volcarlo. Y ahora voy a analizar las cadenas que hay dentro. Uso el comandos <span class="solo-color-neon">strings</span> para analizar la memoria y busco las que contenga php. Van a salir unas cuantas, pero yo me enfoco en las que tengan la ip del atacante. Aquí descubrimos la respuesta: <span class="solo-color-neon">http[:]//77[.]91[.]124[.]20/store/games/index[.]php</span>
 
 ![Pregunta6](https://github.com/user-attachments/assets/312a9c88-29ea-4c75-b794-a20db33c3a85)
 
