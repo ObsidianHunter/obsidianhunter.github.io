@@ -8,6 +8,11 @@ permalink: /trafico-redline/
 
 # Análisis forense de Memoria RAM: Infección por Redline [Volatility3]
 
+- <span class="solo-color-neon">Material de blue team que busca instruir sobre la detección en memoria RAM con Volatility.</span>
+- <span class="solo-color-neon">No me responsabilizo del mal uso de este laboratorio. Queda prohibido usar parte o la totalidad del tutorial para usarlo en ordenadores de terceros.</span>
+- <span class="solo-color-neon">Aunque estén protegidas por corchetes, por favor, nada de clicar en las webs de este lab.</span>
+- <span class="solo-color-neon">Gracias por respetar estas condiciones.</span>
+
 Hoy, os traigo un nuevo laboratorio de [CyberDefenders](https://cyberdefenders.org/blueteam-ctf-challenges/redline/). En este caso, vamos a analizar el volcado de la memoria RAM de un ordenador infectado con <span class="solo-color-neon">RedLine</span>. En este caso, vamos a usar <span class="solo-color-neon">volatility</span> para tal contenido. Entender <span class="solo-color-neon">volatility</span> no es muy difícil (te lo prometo) pero para hacer laboratorios de este tipo tienes que estar un poco fameliarizado con los permisos RWX, procesos padre/hijos sospechosos, conexiones de red anómalas... Son conceptos que se van cogiendo con la experiencia. Sin más dilación, vamos a empezar:
 
 - <span class="solo-color-neon">Pregunta 1:</span> ¿Cómo se llama el proceso sospechoso?. He ejecutado el comando <span class="solo-color-neon">Windows.malware.malfind</span>, esto nos permite detectar inyección de procesos, de librerías dinámicas, process hollowing... me salen dos (uno es un <span class="solo-color-neon">falso positivo</span>, pertenece a Microsoft) y el otro que me sale es <span class="solo-color-neon">oneetx.exe</span>. Este último no sólo tiene permisos de lectura, ejecución y escritura, si no que también tiene un <span class="solo-color-neon">MZ</span>, <span class="solo-color-neon">MZ</span> es el indicativo de que no ha cargado comandos, ha cargado un ejecutable o una librería dinámica. Por lo tanto tenemos que no se ha cargado una pieza de código, <span class="solo-color-neon">ha inyectado el ejecutable directamente en la memoria de otro proceso.</span>
