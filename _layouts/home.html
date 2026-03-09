@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>{{ page.title }} | {{ site.title }}</title>
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/css/custom.css' | relative_url }}">
+</head>
+<body>
+  <header>
+    <h1><a href="{{ '/' | relative_url }}">Ingeniería Defensiva y SecOps</a></h1>
+  </header>
+
+  <article style="max-width: 900px; margin: 0 auto 40px auto; padding: 20px; box-sizing: border-box;">
+    <div class="author-box">
+      <img src="{{ site.author.avatar }}" alt="Foto de perfil">
+      <strong>by {{ site.author.name }}</strong><br>
+      <a href="{{ site.author.instagram }}">Instagram</a> |
+      <a href="{{ site.author.x }}">X</a> |
+      <a href="{{ site.author.github }}">GitHub</a> |
+      <a href="{{ site.author.alienvault }}">AlienVault</a>
+    </div>
+
+    <main style="padding-left: 10px; text-align: justify;">
+      <h1>Laboratorios enfocados en ciberseguridad, automatización e inteligencia artificial.</h1>
+      <p>Mi nombre es Rafa, un apasionado de la ciberseguridad. Comparto tutoriales de detección de ataques, análisis de malware, análisis forense, machine learning... Y mucho más.</p>
+
+      <h2>Categorías principales</h2>
+
+      <div class="categories-container">
+        <div class="category-box">
+          <h3><a href="/categories/blue-team/">Simulación, Detección y Erradicación SOC.</a></h3>
+          <p>Simulación de ataques con SIEM/IDS; gestión completa del incidente hasta el Triage SOC Tier 1/2 y erradicación.</p>
+          <p><strong>
+            {% assign b = site.categories['blue-team'] %}
+            {{ b | size }} posts
+          </strong></p>
+        </div>
+
+        <div class="category-box">
+          <h3><a href="/categories/dfir/">Análisis Forense en Endpoints.</a></h3>
+          <p>DFIR: recolección de artefactos, identificación de IOCs y procedimientos de Remediación.</p>
+          <p><strong>
+            {% assign r = site.categories['dfir'] %}
+            {{ r | size }} posts
+          </strong></p>
+        </div>
+
+        <div class="category-box">
+          <h3><a href="/categories/malware-analysis/">Análisis de Malware y TTPs.</a></h3>
+          <p>Análisis Estático/Dinámico para extraer TTPs y generar Inteligencia de Amenazas de alta fiabilidd.</p>
+          <p><strong>
+            {% assign m = site.categories['malware-analysis'] %}
+            {{ m | size }} posts
+          </strong></p>
+        </div>
+
+        <div class="category-box">
+          <h3><a href="/categories/threat-hunting/">Threat Hunting y Caza Proactiva</a></h3>
+          <p>Caza de amenazas proactiva basada en Hipótesis y querying en SIEM.</p>
+          <p><strong>
+            {% assign c = site.categories['threat-hunting'] %}
+            {{ c | size }} posts
+          </strong></p>
+        </div>
+
+                <div class="category-box">
+          <h3><a href="/categories/automatizacion-ir/">Automatización de IR con Python.</a></h3>
+          <p>Autoerradicación y scripting defensivo para optimizar la IR y reducir el tiempo de respuesta.</p>
+          <p><strong>
+            {% assign c = site.categories['automatizacion-ir'] %}
+            {{ c | size }} posts
+          </strong></p>
+        </div>
+
+                        <div class="category-box">
+          <h3><a href="/categories/ia-secops/">Modelos de Machine y Deep Learning</a></h3>
+          <p>Ingeniería de Detección mediante ML/DL para el análisis de anomalías y etiquetas conocidas.</p>
+          <p><strong>
+            {% assign c = site.categories['ia-secops'] %}
+            {{ c | size }} posts
+          </strong></p>
+        </div>
+      </div>
+
+    </main>
+  </article>
+
+  <footer style="text-align: center; margin-top: 40px;">
+    <p>&copy; {{ site.time | date: "%Y" }} {{ site.title }}</p>
+  </footer>
+</body>
+</html>
+
+

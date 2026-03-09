@@ -1,0 +1,58 @@
+
+header {
+  text-align: center;
+  margin-top: 20px;
+}
+
+
+.author-box {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.author-box img {
+  width: 100px;
+  border-radius: 50%;
+  display: block;
+  margin: 0 auto 10px auto;
+}
+
+
+main h1, main h2 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+
+.categories-container {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+
+.category-box {
+  flex: 1 1 200px;
+  border-radius: 8px;
+  padding: 12px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+  max-width: 250px;
+}
+.section-title {
+  color: #007acc; 
+ 
+}
+.solo-color-neon {
+    color: #39FF14 !important; 
+    background-color: transparent !important; 
+}
+
+.post-content img {
+    max-width: 130%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+

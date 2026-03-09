@@ -1,0 +1,13 @@
+title: Ingeniería Defensiva y SecOps
+description: Tutoriales de detección de ataques, análisis de malware, análisis forense, machine learning... Y mucho más.
+theme: jekyll-theme-hacker
+markdown: kramdown
+
+author:
+  name: Obsidian Hunter
+  avatar: /assets/images/Cypher2.jpg
+  instagram: https://instagram.com/obsidianhunter
+  x: https://x.com/obsidianhunter_
+  github: https://github.com/obsidianhunter
+  alienvault: https://otx.alienvault.com/user/obsidianhunter
+  

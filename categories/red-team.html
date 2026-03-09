@@ -1,0 +1,10 @@
+---
+layout: home
+title: Análisis Forense en Endpoints
+---
+<h1>Posts categoría Red Team</h1>
+<ul>
+  {% for post in site.categories.red-team %}
+    <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+  {% endfor %}
+</ul>
