@@ -7,12 +7,12 @@ permalink: /TH-MovimientoLateral/
 ---
 
 # Caza Proactiva: Detección, contención, erradicación y hardening de un envenenamiento LLMNR y Movmiento Lateral.
-<span class="solo-color-neon">
-- Este contenido se ha creado exclusivamente con fines educativos y de concienciación en ciberseguridad.
-- Este laboratorio se ha hecho en un entorno controlado, con máquinas virtuales propias y con consentimiento.
-- El uso de las herramientas y técnicas descritas en este laboratorio sobre sistemas o redes sin autorización previa y explícita es ilegal y éticamente reprobable.
-- El autor no se hace responsable del mal uso que terceros puedan dar a esta información.
-- Recuerda: el objetivo es aprender a defender, no a destruir.</span>
+
+- <span class="solo-color-neon">Este contenido se ha creado exclusivamente con fines educativos y de concienciación en ciberseguridad.</span>
+- <span class="solo-color-neon">Este laboratorio se ha hecho en un entorno controlado, con máquinas virtuales propias y con consentimiento.</span>
+- <span class="solo-color-neon">El uso de las herramientas y técnicas descritas en este laboratorio sobre sistemas o redes sin autorización previa y explícita es ilegal y éticamente reprobable.</span>
+- <span class="solo-color-neon">El autor no se hace responsable del mal uso que terceros puedan dar a esta información.</span>
+- <span class="solo-color-neon">Recuerda: el objetivo es aprender a defender, no a destruir.</span>
 
 
 Hoy presento un ejercicio de <span class="solo-color-neon">purple team</span>. El objetivo es entender la mecánica de un ataque común para fortalecer nuestras capacidades de detección y respuesta en el SOC. No sólo voy a hacer el laboratorio desde el ala <span class="solo-color-neon">blue team</span>, sino también del <span class="solo-color-neon">red team</span>, para que podáis aprender cómo funciona un poco Windows en ese aspecto (Detectarlo está muy bien, pero sabiendo dónde flaquea te da una perspectiva mucho más amplia).
