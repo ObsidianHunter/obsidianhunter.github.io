@@ -83,9 +83,9 @@ Ya los he detectado, ahora sólo me queda usar su <span class="solo-color-neon">
 
 <img width="545" height="161" alt="Imagen15" src="https://github.com/user-attachments/assets/9672d001-6f42-4325-9a3d-091e5063c4be" />
 
-<img width="557" height="337" alt="Imagen16" src="https://github.com/user-attachments/assets/379e676d-f602-44bc-8016-42b5e8ab16a1" />
+<img width="706" height="526" alt="Imagen16" src="https://github.com/user-attachments/assets/9106ea6b-81d3-46ad-85b4-be2d879d2700" />
 
-<img width="816" height="335" alt="Imagen17" src="https://github.com/user-attachments/assets/5a8f6989-fcf3-4204-bd20-b009f76ef50c" />
+<img width="1052" height="427" alt="Imagen17" src="https://github.com/user-attachments/assets/77ec78f7-91de-492f-864a-5a5395b63fe4" />
 
 En el log de eliminado, sale que todo ha sido resuelto correctamente. Se ha eliminado el servicio, se ha eliminado la ruta del registro asociada al servicio y el archivo.
 
