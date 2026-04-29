@@ -57,7 +57,7 @@ Pero ahora vamos a mirar a <span class="solo-color-neon">Sysmon</span>, mucha ge
 
 He creado una pequeña regla <span class="solo-color-neon">Sigm</span>a, en este caso, si detecta que <span class="solo-color-neon">powershell</span> está involucrado en una conexión de red, que además usa el puerto 53 para la comunicación, activa una alarma de nivel medio. Esto no se da en una empresa normal. Quizá miles de peticiones DNS sí, pero un <span class="solo-color-neon">powershell</span> que esté usando el puerto 53 no es un comportamiento normal, quizá algún administrador para hacer alguna auditoría muy esporádica, y aún así, sospecharía.
 
-
+```yaml
 title: Detección de Tráfico DNS desde PowerShell
 status: activo
 description: Detecta cuando PowerShell abre una conexión de red por el puerto 53.
@@ -72,7 +72,7 @@ detection:
         DestinationPort: 53
     condition: selection
 level: medium
-
+```
 En este caso, la contención sería la de siempre, intentando <span class="solo-color-neon">aislar la máquina de internet</span> y la red privada (siempre que aislar ese ordenador no sea esencial para la salud de la empresa, no puedes permitirte una parada de 1 hora con ese ordenador fuera sabiendo que te podría costar millones de euros en ese periodo). El canal que crea <span class="solo-color-neon">dnscat2</span> es volátil, en este caso yo elegí usar el script de ps1 para cargarlo en memoria y simular un fileless, pero normalmente, sólo el canal de dnscat2 con reiniciar el ordenador suele ser suficiente. Ahora, si este <span class="solo-color-neon">DNS tunneling</span> hubiera sido por un malware y no una herramienta destinada exclusivamente a eso, habría que mirar la <span class="solo-color-neon">persistencia</span> que ha dejado, ya que reiniciar un ordenador con una persistencia de algún tipo (claves run, carpetas startups, servicios, winlogon…) sólo haría que el malware regresara tras cada reinicio.
 
 Aquí, la <span class="solo-color-neon">erradicación</span> coincide un poco con la contención. En mi caso, al ser un fileless sin ningún archivo asociado, simplemente un script que puedes ejecutar por un phishing o macro, una vez contenido también lo eliminas. Si hubiera otro tipo de malware, como he dicho, la <span class="solo-color-neon">erradicación</span> se vuelve algo más tediosa.
